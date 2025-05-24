@@ -1,0 +1,28 @@
+<div class="background">
+  <div class="login-container">
+    <div class="form-box">
+      <h1 style="display: flex;justify-content: center;">Crear Cuenta</h1>
+
+      <input type="email" placeholder="Email" [(ngModel)]="email" />
+      <input type="password" placeholder="Password" [(ngModel)]="password" />
+      <input type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword" />
+
+      <button class="login-btn" (click)="login()">Crear Cuenta</button>
+      <br>
+
+      <p class="divider">o crea cuenta con</p>
+      <div class="social-login">
+        <button><i class="pi pi-google"></i></button>
+        <button><i class="pi pi-facebook"></i></button>
+        <button><i class="pi pi-inbox"></i></button>
+      </div>
+
+      <p class="switch">Tienes cuenta? <a (click)="goToLogin()">Inicia Sesion</a></p>
+      <br>
+
+      <p class="terms">
+        Al crear cuenta, aceptas los <a href="#">Términos de servicio</a> y la <a href="#">Política de privacidad</a> de App Seguridad Zipaquira.
+      </p>
+    </div>
+  </div>
+</div>

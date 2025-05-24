@@ -1,0 +1,76 @@
+<div>
+  <app-navbar></app-navbar>
+</div>
+
+<div class="dashboard">
+  
+  <!-- Tarjeta superior 1 -->
+  <div class="card threat-card">
+    <div class="header-row">
+      <div class="title-and-chart">
+        <span class="title">Total Threats</span>
+        <canvas id="threatChart1" class="mini-chart"></canvas>
+      </div>
+    </div>
+    <div class="main-stat">
+      <span class="count">245</span>
+      <div class="stat-details">
+        <span class="badge negative">-15%</span>
+        <canvas #trendChart1 class="trend-canvas"></canvas>
+      </div>
+    </div>
+    <span class="comparison">Compared to last week</span>
+  </div>
+
+  <!-- Tarjeta superior 2 -->
+  <div class="card threat-card">
+    <div class="header-row">
+      <div class="title-and-chart">
+        <span class="title">Total Threats</span>
+        <canvas id="threatChart2" class="mini-chart"></canvas>
+      </div>
+    </div>
+    <div class="main-stat">
+      <span class="count">245</span>
+      <div class="stat-details">
+        <span class="badge negative">-15%</span>
+        <canvas #trendChart2 class="trend-canvas"></canvas>
+      </div>
+    </div>
+    <span class="comparison">Compared to last week</span>
+  </div>
+
+
+
+    <!-- Mapa Grande -->
+    <div class="map-card">
+      <h2 class="title1">Mapa de Ruta - Zipaquirá</h2>
+      <div id="map" class="map-placeholder"></div>
+    </div>
+
+
+  <!-- Gráfico Circular Combinado -->
+  <div class="info-card">
+    <h2 class="title1">Seguridad y Modelos Predictivos</h2>
+
+    <div class="circle-combined">
+      <p>Estado de Riesgo</p>
+      <p-chart
+        type="doughnut"
+        [data]="combinedDoughnutData"
+        [options]="doughnutOptions"
+        styleClass="circle-chart big-circle"
+      ></p-chart>
+    </div>
+
+    <div class="model-deployment">
+      <p>Despliegue de Modelos Predictivos</p>
+      <div class="model-bars">
+        <div class="model-bar purple-bar">896</div>
+        <div class="model-bar blue-bar">1289</div>
+        <div class="model-bar red-bar">1945</div>
+      </div>
+    </div>
+  </div>
+
+  </div>

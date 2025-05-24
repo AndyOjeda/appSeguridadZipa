@@ -1,0 +1,56 @@
+  <aside class="sidebar">
+    <div class="logo">ZIPA <span class="title-conecta">CONECTA</span></div>
+    <div class="menu-title">MENU</div>
+    <nav>
+      <ul>
+        <li><a routerLink="/dashboard/home" routerLinkActive="active"><i class="pi pi-home"></i><span>Home</span></a></li>
+        <li><a routerLink="/dashboard/modofamiliar" routerLinkActive="active"><i class="pi pi-shield"></i><span>Modo Familiar </span></a></li>
+        <li><a routerLink="/dashboard/asistente" routerLinkActive="active"><i class="pi pi-user"></i><span>Asistente Virtual</span></a></li>
+        <li><a routerLink="/dashboard/noticias" routerLinkActive="active"><i class="pi pi-address-book"></i><span>Noticias</span></a></li>
+        <li>
+          <a href="#" (click)="abrirDialogoEmergencia(); $event.preventDefault();">
+            <i class="pi pi-info-circle"></i><span>Botón de Pánico</span>
+          </a>
+        </li>
+
+
+        <hr />
+
+        <li><a routerLink="/dashboard/configuracion" routerLinkActive="active"><i class="pi pi-cog"></i><span>Configuracion</span></a></li>
+        <li><a routerLink="/dashboard/soporte" routerLinkActive="active"><i class="pi pi-question-circle"></i><span>Soporte</span></a></li>
+        <li>
+          <a href="#" (click)="abrirDialogoCerrar(); $event.preventDefault();">
+            <i class="pi pi-sign-out"></i><span>Cerrar Sesion</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="modal-overlay" *ngIf="mostrarDialogo">
+  <div class="modal-content">
+    <h2>Emergencia</h2>
+
+    <label class="opcion" for="opcion">¿A quién deseas contactar?</label>
+    <select id="opcion" [(ngModel)]="opcion">
+      <option value="policia">Policía</option>
+      <option value="bomberos">Bomberos</option>
+      <option value="ambulancia">Ambulancia</option>
+    </select>
+
+    <label class="opcion" for="direccion">Tu dirección</label>
+    <input id="direccion" type="text" [value]="direccion" readonly />
+
+    <button class="btn-contactar" (click)="contactar()">Contactar</button>
+    <button class="btn-cerrar" (click)="cerrarDialogo()">Cerrar</button>
+  </div>
+</div>
+
+ <div class="modal-overlay" *ngIf="mostrarDialogoCerrar">
+  <div class="modal-content">
+    <h2>Cerrar Sesion</h2>
+
+    <button class="btn-contactar" (click)="cerrarSesion()">Cerrar Sesion</button>
+    <button class="btn-cerrar" (click)="cerrarDialogoCerrar()">Cerrar</button>
+  </div>
+</div>

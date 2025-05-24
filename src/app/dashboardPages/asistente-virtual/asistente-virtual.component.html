@@ -1,0 +1,21 @@
+<div class="chat-container">
+  <div class="chat-messages">
+    <div *ngFor="let msg of messages" [ngClass]="msg.from">
+      <div class="message-content">
+        <ng-container *ngIf="msg.type === 'text'">{{ msg.text }}</ng-container>
+        <ng-container *ngIf="msg.type === 'options'">
+          <div class="options">
+            <button *ngFor="let option of msg.options" (click)="handleOption(option)">
+              {{ option }}
+            </button>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <div class="chat-input">
+    <input [(ngModel)]="userInput" placeholder="Escribe algo..." (keydown.enter)="sendMessage()" />
+    <button (click)="sendMessage()">Enviar</button>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<nav class="navbar">
+  <div class="navbar-right" (click)="toggleMenu()">
+    <i class="pi pi-user"> </i>
+    <span class="user-name">Vale</span>
+    <span class="arrow">&#9662;</span>
+
+    <div class="dropdown" *ngIf="menuOpen">
+      <a href="#">Profile</a>
+      <a href="#">Settings</a>
+      <a href="#">Log out</a>
+    </div>
+  </div>
+</nav>

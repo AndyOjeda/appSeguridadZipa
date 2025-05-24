@@ -1,0 +1,10 @@
+.dashboard-container {
+  display: flex;
+  height: 99vh;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 13.8rem;
+  background-color: #070705;
+}
