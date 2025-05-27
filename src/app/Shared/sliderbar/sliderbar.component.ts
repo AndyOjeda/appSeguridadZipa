@@ -12,12 +12,24 @@ import { Router } from '@angular/router';
 })
 export class SliderbarComponent {
 
- mostrarDialogo = false;
- mostrarDialogoCerrar = false;
+  mostrarSidebar = false;
+  esPantallaPequena = false;
+  mostrarDialogo = false;
+  mostrarDialogoCerrar = false;
   opcion = '';
   direccion = 'Cargando ubicación...';
 
   constructor(private router: Router) {}
+
+  ngOnInit() {
+  this.verificarPantalla();
+  window.addEventListener('resize', this.verificarPantalla.bind(this));
+  }
+
+  verificarPantalla() {
+  this.esPantallaPequena = window.innerWidth < 768;
+  if (!this.esPantallaPequena) this.mostrarSidebar = true;
+  }
 
   abrirDialogoEmergencia() {
     this.mostrarDialogo = true;
@@ -50,5 +62,9 @@ export class SliderbarComponent {
   cerrarSesion(){
     this.router.navigate(['/login']);
   }
+
+  toggleSidebar() {
+  this.mostrarSidebar = !this.mostrarSidebar;
+}
 
 }

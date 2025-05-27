@@ -73,14 +73,16 @@ export class HomeComponent implements AfterViewInit {
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/dark-v11',
-      center: [-74.027, 5.022],
-      zoom: 13
+      center: [-74.002, 5.026],
+      zoom: 13.2
     });
 
     const puntos = [
-      { lng: -74.030, lat: 5.025, label: 'Robo' },
-      { lng: -74.023, lat: 5.020, label: 'Asalto' },
-      { lng: -74.027, lat: 5.017, label: 'Vandalismo' }
+      { lng: -74.005, lat: 5.025, label: 'Robo' },
+      { lng: -74.0, lat: 5.020, label: 'Asalto' },
+      { lng: -74.001, lat: 5.017, label: 'Vandalismo' },
+      { lng: -74.001, lat: 5.035, label: 'Hurto' },
+      { lng: -73.995, lat: 5.030, label: 'Emergencia médica' }
     ];
 
     puntos.forEach(punto => {

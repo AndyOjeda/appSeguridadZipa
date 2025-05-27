@@ -1,4 +1,5 @@
-  <aside class="sidebar">
+  <button class="hamburger" (click)="toggleSidebar()">☰</button>
+  <aside class="sidebar" [class.open]="mostrarSidebar" *ngIf="mostrarSidebar || !esPantallaPequena">
     <div class="logo">ZIPA <span class="title-conecta">CONECTA</span></div>
     <div class="menu-title">MENU</div>
     <nav>

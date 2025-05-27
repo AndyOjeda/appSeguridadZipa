@@ -1,1 +1,28 @@
-<p>noticias works!</p>
+<div class="articles-section">
+  <div class="header">
+    <h2>Noticias de Seguridad</h2>
+    <select>
+      <option>Recientes</option>
+      <option>Más leídas</option>
+      <option>Zipaquirá Centro</option>
+      <option>Veredas</option>
+    </select>
+  </div>
+
+  <div class="articles-grid">
+    <div class="card" *ngFor="let news of newsArticles">
+      <div class="card-img">
+        <img [src]="news.image" alt="Noticia Zipaquirá">
+        <span class="category">{{ news.category }}</span>
+      </div>
+      <div class="card-body">
+        <h3>{{ news.title }}</h3>
+        <p>{{ news.summary }}</p>
+        <div class="author">
+          <img [src]="news.authorImage" alt="Autor">
+          <span>{{ news.author }} • {{ news.date }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

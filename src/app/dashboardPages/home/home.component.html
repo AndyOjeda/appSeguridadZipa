@@ -3,74 +3,69 @@
 </div>
 
 <div class="dashboard">
-  
-  <!-- Tarjeta superior 1 -->
-  <div class="card threat-card">
-    <div class="header-row">
-      <div class="title-and-chart">
-        <span class="title">Total Threats</span>
-        <canvas id="threatChart1" class="mini-chart"></canvas>
-      </div>
+  <!-- Tarjeta 1 -->
+  <div class="card styled-card">
+    <div class="icon-title">
+      <svg width="24" height="24" fill="none" stroke="currentColor"><path d="M3 3h18v18H3z"/><path d="M8 3v18M16 3v18"/></svg>
+      <span class="title">Incidentes reportados</span>
     </div>
-    <div class="main-stat">
-      <span class="count">245</span>
-      <div class="stat-details">
-        <span class="badge negative">-15%</span>
-        <canvas #trendChart1 class="trend-canvas"></canvas>
-      </div>
-    </div>
-    <span class="comparison">Compared to last week</span>
+    <span class="big-number">245</span>
+    <span class="percent positive">▲ 2.1% respecto al mes pasado</span>
   </div>
 
-  <!-- Tarjeta superior 2 -->
-  <div class="card threat-card">
-    <div class="header-row">
-      <div class="title-and-chart">
-        <span class="title">Total Threats</span>
-        <canvas id="threatChart2" class="mini-chart"></canvas>
-      </div>
+  <!-- Tarjeta 2 -->
+  <div class="card styled-card">
+    <div class="icon-title">
+      <svg width="24" height="24" fill="none" stroke="currentColor"><path d="M22 16.92V19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-2.08"/><path d="M16 3.13a4 4 0 0 1 0 7.75M8 3.13a4 4 0 0 0 0 7.75"/></svg>
+      <span class="title">Llamadas de emergencia</span>
     </div>
-    <div class="main-stat">
-      <span class="count">245</span>
-      <div class="stat-details">
-        <span class="badge negative">-15%</span>
-        <canvas #trendChart2 class="trend-canvas"></canvas>
-      </div>
-    </div>
-    <span class="comparison">Compared to last week</span>
+    <span class="big-number">1.340</span>
+    <span class="percent negative">▼ 1.8% respecto al mes pasado</span>
   </div>
 
-
-
-    <!-- Mapa Grande -->
-    <div class="map-card">
-      <h2 class="title1">Mapa de Ruta - Zipaquirá</h2>
-      <div id="map" class="map-placeholder"></div>
+  <!-- Tarjeta 3 -->
+  <div class="card styled-card">
+    <div class="icon-title">
+      <svg width="24" height="24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span class="title">Robos reportados</span>
     </div>
-
-
-  <!-- Gráfico Circular Combinado -->
-  <div class="info-card">
-    <h2 class="title1">Seguridad y Modelos Predictivos</h2>
-
-    <div class="circle-combined">
-      <p>Estado de Riesgo</p>
-      <p-chart
-        type="doughnut"
-        [data]="combinedDoughnutData"
-        [options]="doughnutOptions"
-        styleClass="circle-chart big-circle"
-      ></p-chart>
-    </div>
-
-    <div class="model-deployment">
-      <p>Despliegue de Modelos Predictivos</p>
-      <div class="model-bars">
-        <div class="model-bar purple-bar">896</div>
-        <div class="model-bar blue-bar">1289</div>
-        <div class="model-bar red-bar">1945</div>
-      </div>
-    </div>
+    <span class="big-number">97</span>
+    <span class="percent negative">▼ 5.2% respecto al mes pasado</span>
   </div>
 
+  <!-- Tarjeta 4 -->
+  <div class="card styled-card">
+    <div class="icon-title">
+      <svg width="24" height="24" fill="none" stroke="currentColor"><path d="M2 12h20"/><path d="M12 2v20"/></svg>
+      <span class="title">Intervenciones policiales</span>
+    </div>
+    <span class="big-number">521</span>
+    <span class="percent positive">▲ 0.7% respecto al mes pasado</span>
   </div>
+
+  <!-- Tarjeta 5 -->
+  <div class="card styled-card">
+    <div class="icon-title">
+      <svg width="24" height="24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+      <span class="title">Cámaras activas</span>
+    </div>
+    <span class="big-number">164</span>
+    <span class="percent positive">▲ 3.5% respecto al mes pasado</span>
+  </div>
+
+  <!-- Tarjeta 6 -->
+  <div class="card styled-card">
+    <div class="icon-title">
+      <svg width="24" height="24" fill="none" stroke="currentColor"><path d="M3 5h18M3 10h18M3 15h18M3 20h18"/></svg>
+      <span class="title">Alertas ciudadanas</span>
+    </div>
+    <span class="big-number">380</span>
+    <span class="percent positive">▲ 4.0% respecto al mes pasado</span>
+  </div>
+
+  <!-- Mapa -->
+  <div class="map-card">
+    <h2 class="title">Mapa de Seguridad - Zipaquirá</h2>
+    <div id="map" class="map-placeholder">Mapa aquí</div>
+  </div>
+</div>

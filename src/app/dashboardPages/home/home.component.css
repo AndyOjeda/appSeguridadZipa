@@ -1,67 +1,112 @@
-/* Layout principal del dashboard */
 .dashboard {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: auto auto auto auto;
   gap: 1rem;
   padding: 1.5rem;
-  max-height: 120vh;
 }
 
-/* Tarjetas generales */
+/* Tarjeta general reducida */
 .card {
   background-color: #151517;
   color: white;
-  padding: 1.5rem;
-  border-radius: 1rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 20rem;
-  height: 12rem;
-}
-
-/* Títulos dentro de tarjetas */
-.card-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: #00e396;
-}
-
-.card-subtitle {
-  font-size: 14px;
-  color: #cccccc;
-  margin-bottom: 8px;
-}
-
-/* Títulos generales */
-.title,
-.title1 {
-  color: #606062;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-}
-
-/* Estilos del mapa */
-#map {
   width: 100%;
-  height: 95%;
-  border-radius: 0.75rem;
+  height: 10rem;
 }
 
+/* Tarjetas de amenazas */
+.card.threat-card {
+  height: 10rem;
+  grid-column: span 1;
+}
+
+/* Título */
+.title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #aaa;
+}
+
+/* Gráfico pequeño */
+.mini-chart {
+  height: 3rem !important;
+  width: 4rem !important;
+}
+
+/* Tendencia pequeña */
+.trend-canvas {
+  width: 60px;
+  height: 30px;
+}
+
+/* Conteo principal */
+.count {
+  font-size: 1.25rem;
+}
+
+/* Badge */
+.badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+}
+
+/* Tarjeta de información */
+.info-card {
+  background-color: #151517;
+  color: white;
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 1;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Gráfico circular más pequeño */
+.circle-chart.small-circle {
+  max-width: 60px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Barras de modelos */
+.model-bars {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.model-bar {
+  flex: 1;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Colores */
+.purple-bar { background-color: #8b5cf6; }
+.blue-bar { background-color: #3b82f6; }
+.red-bar { background-color: #ef4444; }
+
+/* Mapa sin cambios */
 .map-card {
   background-color: #151517;
-  grid-column: 3 / span 2;
-  grid-row: 1 / span 3;
-  padding: 1.5rem;
+  grid-column: 1 / span 3;
+  grid-row: 2 / span 2;
+  padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .map-placeholder {
   width: 100%;
-  height: 100%;
+  height: 25rem;
   background-color: #e5e7eb;
   border-radius: 0.75rem;
   display: flex;
@@ -70,201 +115,125 @@
   color: #6b7280;
 }
 
-/* Tarjeta de información */
-.info-card {
+/* ICONO + TITULO en línea */
+.icon-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.styled-card {
   background-color: #151517;
   color: white;
-  grid-column: 1 / span 2;
-  grid-row: 2 / span 2;
-  padding: 1.5rem;
-  border-radius: 1rem;
+  padding: 1.2rem;
+  border-radius: 0.75rem;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.stat-details {
   display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.trend-canvas {
-  width: 100px;
-  height: 40px;
-}
-
-
-
-/* Sección de despliegue del modelo */
-.model-deployment {
-  margin-top: 1.5rem;
-}
-
-.bubbles {
-  display: flex;
-  gap: 1rem;
-  margin-top: 0.5rem;
-}
-
-.bubble {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 9999px;
-  display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  font-weight: bold;
+  align-items: flex-start;
+  height: 10rem;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Gráficas circulares */
-.circle-charts {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
-
-.circle-item {
-  flex: 1;
-  text-align: center;
-  color: #ccc;
-}
-
-.circle-chart {
-  max-width: 80px;
-  margin: 0 auto;
-}
-
-/* Barras de modelos */
-.model-bars {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.model-bar {
-  flex: 1;
-  padding: 0.75rem;
-  text-align: center;
-  border-radius: 1rem;
-  color: white;
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-/* Colores de barras */
-.purple-bar {
-  background-color: #8b5cf6;
-}
-
-.blue-bar {
-  background-color: #3b82f6;
-}
-
-.red-bar {
-  background-color: #ef4444;
-}
-
-/* Colores utilitarios (texto o fondos) */
-.text-red { color: #f87171; }
-.text-yellow { color: #facc15; }
-.text-green { color: #4ade80; }
-.text-blue { color: #3b82f6; }
-
-.bg-purple { background-color: #8b5cf6; }
-.bg-blue { background-color: #3b82f6; }
-.bg-red { background-color: #ef4444; }
-
-/* Texto destacado */
-.highlight {
-  font-size: 1.75rem;
-  font-weight: bold;
-}
-
-.card.threat-card {
-  position: relative;
-  background-color: #151517;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 20rem;
-  height: 14rem;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-}
-
-/* Título y gráfico */
-.header-row {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-/* Título */
-.title {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #888;
-}
-
-/* Gráfico */
-.mini-chart {
-  height: 6rem !important;
-  width: 100% !important;
-}
-
-/* Estadísticas principales */
-.main-stat {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-/* Badge positivo o negativo */
-.badge {
-  padding: 0.2rem 0.5rem;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-}
-
-.positive {
-  background-color: #4ade80;
-  color: #000;
-}
-
-.negative {
-  background-color: #ef4444;
-  color: #fff;
-}
-
-/* Texto de comparación */
-.comparison {
-  font-size: 0.875rem;
+.styled-card .title {
+  font-size: 0.9rem;
   color: #aaa;
 }
 
-.title-and-chart {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.styled-card .big-number {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
 }
 
-.title {
-  font-size: 1rem;
+.styled-card .percent {
+  font-size: 0.9rem;
   font-weight: 500;
-  color: #888;
-  margin-right: 1rem;
 }
 
-.mini-chart {
-  width: 150px;
-  height: 90px;
+.styled-card .positive {
+  color: #22c55e;
 }
 
-p-chart{
-  width: 320px;
-  height: 320px;
+.styled-card .negative {
+  color: #ef4444;
+}
+
+/* === MEDIA QUERIES PARA CELULARES === */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .card,
+  .threat-card,
+  .info-card,
+  .map-card,
+  .styled-card {
+    height: auto;
+    grid-column: span 1 !important;
+    grid-row: auto !important;
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 0.85rem;
+  }
+
+  .count {
+    font-size: 1.1rem;
+  }
+
+  .badge {
+    font-size: 0.7rem;
+  }
+
+  .mini-chart {
+    height: 2.5rem !important;
+    width: 3.5rem !important;
+  }
+
+  .trend-canvas {
+    width: 50px;
+    height: 25px;
+  }
+
+  .circle-chart.small-circle {
+    max-width: 50px;
+  }
+
+  .model-bars {
+    flex-direction: column;
+  }
+
+  .model-bar {
+    font-size: 0.85rem;
+    padding: 0.4rem;
+  }
+
+  .map-placeholder {
+    height: 15rem;
+  }
+
+  .styled-card {
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .styled-card .title {
+    font-size: 0.85rem;
+  }
+
+  .styled-card .big-number {
+    font-size: 1.5rem;
+  }
+
+  .styled-card .percent {
+    font-size: 0.85rem;
+  }
 }
